@@ -1,8 +1,9 @@
 import * as React from "react"
-import { ThemeProvider } from "@mui/material/styles"
-import Box from "@mui/material/Box"
 import Rating from "@mui/material/Rating"
 import theme from "./theme"
+import Box from "@mui/material/Box"
+
+import { ThemeProvider } from "@mui/material/styles"
 
 export default function Star() {
   const [value, setValue] = React.useState(4)
