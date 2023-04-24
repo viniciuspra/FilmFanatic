@@ -4,6 +4,7 @@ export default {
     BACKGROUND_800: "#262529",
     BACKGROUND_700: "#312E38",
     BACKGROUND_TAG: "#282124",
+    BACKGROUND_GREEN: "rgba(180, 212, 42, 0.1)",
 
 
     BLACK: "#0D0C0F",
