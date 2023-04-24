@@ -37,7 +37,7 @@ export default createGlobalStyle`
     filter: brightness(0.9);
   }
   ::-webkit-scrollbar {
-  width: 12px;
+  width: 1rem;
   }
 
   ::-webkit-scrollbar-track {

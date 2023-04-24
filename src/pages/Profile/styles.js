@@ -9,7 +9,7 @@ export const Container = styled.div`
     width: 100%;
     height: 144px;
 
-    background-color: rgba(180, 212, 42, 0.1);
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_GREEN};
     display: flex;
     align-items: center;
 
