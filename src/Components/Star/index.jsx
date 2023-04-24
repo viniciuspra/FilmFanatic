@@ -5,8 +5,8 @@ import Box from "@mui/material/Box"
 
 import { ThemeProvider } from "@mui/material/styles"
 
-export default function Star() {
-  const [value, setValue] = React.useState(4)
+export default function Star(props) {
+  const [value, setValue] = React.useState(props.value || 0)
 
   return (
     <ThemeProvider theme={theme}>
