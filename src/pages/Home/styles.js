@@ -13,6 +13,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   grid-area: content;
   padding: 6rem 10rem;
+
   overflow: auto;
 
   > div {
@@ -28,6 +29,7 @@ export const NewFilm = styled.button `
   width: 20rem;
   height: 4.9rem;
 
+  border: none;
   border-radius: 1rem;
 
   display: flex;
