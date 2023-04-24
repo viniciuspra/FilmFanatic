@@ -1,4 +1,4 @@
-import { Container, InfoBox } from "./styles"
+import { Container, Content, InfoBox } from "./styles"
 import { BackButton } from "../../Components/BackButton"
 import { FiClock } from "react-icons/fi"
 import { Header } from "../../Components/Header"
@@ -10,7 +10,7 @@ export function Preview() {
     <Container>
       <Header />
 
-      <main>
+      <Content>
         <BackButton />
         <InfoBox>
           <div>
@@ -63,7 +63,7 @@ export function Preview() {
           atrasando a partida. Ao voltarem para a Endurance, Cooper e Amelia
           descobrem que 23 anos se passaram.
         </p>
-      </main>
+      </Content>
     </Container>
   )
 }

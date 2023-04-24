@@ -4,23 +4,24 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
 
-  > main {
-    padding: 4rem 14rem 15rem;
+`
 
-    > div {
-      margin-bottom: 2.4rem;
-    }
+export const Content = styled.div`
+  padding: 4rem 14rem 15rem;
+  max-height: 80vh;
+  overflow-y: auto;
 
-    > p {
-      font-size: 1.6rem;
-      text-align: justify;
-      font-weight: normal;
-    }
-
+  > div {
+    margin-bottom: 2.4rem;
   }
 
-
+  > p {
+    font-size: 1.6rem;
+    text-align: justify;
+    font-weight: normal;
+  }
 `
+
 
 export const InfoBox = styled.div`
   width: 100%;
