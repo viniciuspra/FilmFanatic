@@ -8,7 +8,7 @@ export function Header() {
       <h1>FilmFanatic</h1>
 
       <Search>
-        <Input placeholder="Pesquisar pelo título" icon={FiSearch} />
+        <Input placeholder="Pesquisar pelo título" type="text" icon={FiSearch} />
       </Search>
 
       <Profile>
