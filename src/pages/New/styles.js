@@ -50,7 +50,7 @@ export const Form = styled.form`
     justify-content: space-between;
     gap: 2rem;
 
-    margin: 4rem 0 10rem;
+    margin: 4rem 0 5rem;
   }
 
 `

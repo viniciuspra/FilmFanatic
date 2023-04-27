@@ -32,10 +32,9 @@ export function New() {
           </div>
 
           <div className="buttons">
-            <Button title="Excluir filme" isNew/>
-            <Button title="Salvar alterações" />
+            <Button title="Excluir filme" />
+            <Button title="Salvar alterações" isNew />
           </div>
-
         </Form>
       </main>
     </Container>
