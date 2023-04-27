@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.button`
   width: 100%;
-  background-color: ${({ theme, isNew }) => isNew ? theme.COLORS.GREEN : theme.COLORS.BACKGROUND_800};
-  color: ${({ theme, isNew }) => isNew ? theme.COLORS.BACKGROUND_800 : theme.COLORS.GREEN};
+  background-color: ${({ theme, isNew }) => isNew ? theme.COLORS.GREEN : theme.COLORS.BLACK};
+  color: ${({ theme, isNew }) => isNew ? theme.COLORS.BLACK : theme.COLORS.GREEN};
 
   height: 56px;
   border: 0;
