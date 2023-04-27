@@ -3,20 +3,27 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  
-  background-color: ${({ theme, isNew }) => isNew ? "transparent" : theme.COLORS.BACKGROUND_900};
+
+  background-color: ${({ theme, isNew }) =>
+    isNew ? "transparent" : theme.COLORS.BACKGROUND_900};
   color: ${({ theme }) => theme.COLORS.GRAY_300};
-  
-  border: ${({ theme, isNew }) => isNew ? `1px dashed ${theme.COLORS.GRAY_300}` : "none"};
+
+  border: ${({ theme, isNew }) =>
+    isNew ? `1px dashed ${theme.COLORS.GRAY_300}` : "none"};
 
   border-radius: 1rem;
 
   > button {
+    display: flex;
+    align-items: center;
+
+    margin-right: 5px;
+
     border: none;
     background: none;
 
     svg {
-      color: ${({ theme}) => theme.COLORS.GREEN};
+      color: ${({ theme }) => theme.COLORS.GREEN};
       font-size: 2.4rem;
       border-radius: 50%;
       transition: all 0.3s;
@@ -27,8 +34,7 @@ export const Container = styled.div`
   }
 
   > input {
-    width: 100%;
-    height: 5.6rem;
+    height: 5rem;
 
     padding: 1.6rem;
 
