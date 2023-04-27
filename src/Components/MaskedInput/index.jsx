@@ -6,7 +6,7 @@ import { Container } from "./styles"
 export function MaskedInput(props) {
   return (
     <Container>
-      <InputMask mask="9" maskPlaceholder={null} min={0} max={5} {...props} />
+      <InputMask mask="9" min={0} max={5} {...props} />
     </Container>
   )
 }
