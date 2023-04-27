@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.button`
   width: 100%;
-  background-color: ${({theme}) => theme.COLORS.GREEN};
-  color: ${({theme}) => theme.COLORS.BACKGROUND_800};
+  background-color: ${({ theme, isNew }) => isNew ? theme.COLORS.GREEN : theme.COLORS.BACKGROUND_800};
+  color: ${({ theme, isNew }) => isNew ? theme.COLORS.BACKGROUND_800 : theme.COLORS.GREEN};
 
   height: 56px;
   border: 0;
@@ -12,7 +12,7 @@ export const Container = styled.button`
   border-radius: 10px;
   font-weight: 500;
 
-  transition: all .2s;
+  transition: all 0.2s;
 
   &:disabled {
     opacity: 0.5;
@@ -25,4 +25,4 @@ export const Container = styled.button`
   &:active {
     transform: scale(0.96);
   }
-`; 
+` 
