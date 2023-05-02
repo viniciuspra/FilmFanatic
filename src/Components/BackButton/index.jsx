@@ -3,7 +3,7 @@ import { FiArrowLeft } from "react-icons/fi";
 
 export function BackButton() {
   return (
-    <Container>
+    <Container to="/">
       <FiArrowLeft /> Voltar
     </Container>
   )

@@ -7,7 +7,7 @@ export function FilmCard({ data, ...rest}) {
   const rating = data.rating || 0;
 
   return (
-    <Container {...rest}>
+    <Container to="/Preview/1" {...rest}>
       <h1>{data.title}</h1>
       <Star value={rating} />
       <p>{data.description}</p>

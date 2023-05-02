@@ -28,10 +28,10 @@ export const Profile = styled.div`
   text-align: end;
   font-size: 1.4rem;
 
-  > img {
+  img {
     width: 5.6rem;
     border-radius: 50%;
-  }
+  }    
 
   > span {
     font-weight: bold;
