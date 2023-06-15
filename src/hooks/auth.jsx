@@ -1,7 +1,6 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState, useEffect } from "react"
 
 import { api } from "../services/api"
-import { useEffect } from "react"
 
 export const AuthContext = createContext({})
 
@@ -16,10 +15,9 @@ function AuthProvider({ children }) {
       localStorage.setItem('@filmfanatic:user', JSON.stringify(user))
       localStorage.setItem('@filmfanatic:token', token)
 
-      api.defaults.headers.authorization = `Bearer ${token}`
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
-      setData({user, token})
-      console.log(user, token);
+      setData({ user, token })
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message)
@@ -29,25 +27,40 @@ function AuthProvider({ children }) {
     }
   }
 
+  function signOut() {
+    localStorage.removeItem('@filmfanatic:token')
+    localStorage.removeItem('@filmfanatic:user')
+
+    setData({})
+  }
+
   useEffect(() => {
-    const user = localStorage.setItem('@filmfanatic:user')
-    const token = localStorage.setItem('@filmfanatic:token')
+    const token = localStorage.getItem('@filmfanatic:token')
+    const user = localStorage.getItem('@filmfanatic:user')
 
-    if (user && token) {
-      
+    if (token && user) {
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`
+
+      setData({
+        token,
+        user: JSON.parse(user)
+      })
     }
-
-  },[])
+  }, [])
 
   return (
-    <AuthContext.Provider value={{ signIn, user: data.user }}>
+    <AuthContext.Provider value={{
+       signIn,
+       signOut,
+       user: data.user 
+      }}>
       {children}
     </AuthContext.Provider>
   )
 }
 
 function useAuth() {
-  const context = createContext(AuthContext)
+  const context = useContext(AuthContext)
 
   return context
 }
