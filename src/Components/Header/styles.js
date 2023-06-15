@@ -39,9 +39,11 @@ export const Profile = styled.div`
 
     margin-right: 1rem;
 
-    > a {
+    > button {
       font-weight: normal;
       color: ${({ theme }) => theme.COLORS.GRAY_300};
+      background-color: transparent;
+      border: none;
     }
   }
 
