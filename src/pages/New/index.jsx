@@ -1,7 +1,7 @@
-import { Container, Form, Section } from "./styles"; 
-import { Link } from "react-router-dom";
-import { Input } from "../../Components/Input";
-import { Button } from "../../Components/Button";
+import { Container, Form, Section } from "./styles";
+
+import { Input } from "../../components/Input";
+import { Button } from "../../components/Button";
 import { Header } from "../../Components/Header";
 import { TagItem } from "../../Components/TagItem";
 import { TextArea } from "../../Components/TextArea";
@@ -33,7 +33,6 @@ export function New() {
           </div>
 
           <div className="buttons">
-            <Button title="Excluir filme" />
             <Button title="Salvar alterações" isNew />
           </div>
         </Form>

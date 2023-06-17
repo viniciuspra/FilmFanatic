@@ -2,7 +2,6 @@ import { Container, Content, NewFilm } from "./styles";
 import { FilmCard } from "../../Components/FilmCard";
 import { Header } from "../../Components/Header";
 import { FiPlus } from "react-icons/fi";
-import { Link } from "react-router-dom";
 
 export function Home() {
   return (

@@ -1,8 +1,10 @@
 import { Container, Content, InfoBox } from "./styles"
 import { BackButton } from "../../Components/BackButton"
 import { FiClock } from "react-icons/fi"
+import { Button } from "../../components/Button"
 import { Header } from "../../Components/Header"
 import { Tag } from "../../Components/Tag"
+
 import Star from "../../Components/Star"
 
 export function Preview() {
@@ -63,6 +65,8 @@ export function Preview() {
           atrasando a partida. Ao voltarem para a Endurance, Cooper e Amelia
           descobrem que 23 anos se passaram.
         </p>
+
+        <Button title="Excluir filme" />  
       </Content>
     </Container>
   )
