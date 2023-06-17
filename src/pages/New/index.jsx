@@ -1,3 +1,7 @@
+import { useState } from "react";
+
+import { v4 as uuidv4 } from 'uuid';
+
 import { Container, Form, Section } from "./styles";
 
 import { Input } from "../../components/Input";
@@ -9,6 +13,18 @@ import { BackButton } from "../../Components/BackButton";
 import { MaskedInput } from "../../Components/MaskedInput";
 
 export function New() {
+  const [tags, setTags] = useState([])
+  const [newTag, setNewTag] = useState("")
+
+  function handleAddTag() {
+    setTags(prevState => [...prevState, newTag])
+    setNewTag('')
+  }
+
+  function handleRemoveTag(deleted) {
+    setTags(prevState => prevState.filter(tag => tag !== deleted))
+  }
+
   return (
     <Container>
       <Header />
@@ -28,8 +44,23 @@ export function New() {
           <h1>Marcadores</h1>
 
           <div className="Mark">
-            <TagItem value="Família" />
-            <TagItem isNew placeholder="Novo marcador" />
+              {
+                tags.map(tag => (
+                  <TagItem
+                    key={uuidv4()}
+                    value={tag}
+                    onClick={() => {handleRemoveTag(tag)}}
+                  />
+                ))
+              }
+
+              <TagItem
+                isNew
+                placeholder="Novo marcador" 
+                onChange={e => setNewTag(e.target.value)}
+                value={newTag}
+                onClick={handleAddTag}
+              />
           </div>
 
           <div className="buttons">
