@@ -34,8 +34,17 @@ function AuthProvider({ children }) {
     setData({})
   }
 
-  async function updateProfile({ user }) {
+  async function updateProfile({ user, avatarFile }) {
     try {
+
+      if(avatarFile) {
+        const fileUpdateForm = new FormData()
+        fileUpdateForm.append('avatar', avatarFile) 
+
+        const response = await api.patch('/users/avatar', fileUpdateForm)
+        user.avatar = response.data.avatar
+      }
+
       await api.put('/users', user)
       localStorage.setItem('@filmfanatic:user', JSON.stringify(user))
 
@@ -57,7 +66,7 @@ function AuthProvider({ children }) {
 
     if (token && user) {
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`
-
+      
       setData({
         token,
         user: JSON.parse(user)

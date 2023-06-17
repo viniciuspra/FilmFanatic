@@ -6,7 +6,11 @@ import { BackButton } from "../../Components/BackButton";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 
+import { api } from "../../services/api";
+
 import { useAuth } from '../../hooks/auth'
+
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 
 export function Profile() {
   const { user, updateProfile } = useAuth()
@@ -15,15 +19,30 @@ export function Profile() {
   const [oldPassword, setOldPassword] = useState("")
   const [newPassword, setNewPassword] = useState("")
 
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
+
+  const [avatar, setAvatar] = useState(avatarUrl)
+  const [avatarFile, setAvatarFile] = useState(null)
+
   async function handleUpdate() {
-    const updateUser = {
+    const updated = {
       name,
       email,
       password: newPassword,
       old_password: oldPassword
     }
 
-    await updateProfile({ user: updateUser })
+    const userUpdated = Object.assign(user, updated)
+
+    await updateProfile({ user: userUpdated, avatarFile })
+  }
+
+  function handleChangeAvatar(event) {
+    const file = event.target.files[0]
+    setAvatarFile(file)
+
+    const imgPreview = URL.createObjectURL(file)
+    setAvatar(imgPreview)
   }
 
   return (
@@ -34,11 +53,18 @@ export function Profile() {
 
       <Form>
         <Avatar>
-          <img src="https://github.com/viniciuspra.png" alt="Foto do usuario" />
+          <img
+           src={avatar}
+           alt="Foto do usuario" 
+          />
           <label htmlFor="avatar">
             <FiCamera />
 
-            <input id="avatar" type="file" />
+            <input
+             id="avatar"
+             type="file"
+             onChange={handleChangeAvatar}
+            />
           </label>
         </Avatar>
         <Input
