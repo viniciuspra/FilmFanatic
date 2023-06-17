@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-
+  overflow: hidden;
 `
 
 export const Content = styled.div`
   padding: 4rem 14rem 15rem;
-  max-height: 80vh;
+  max-height: 90vh;
   overflow-y: auto;
 
   > div {
@@ -19,6 +19,8 @@ export const Content = styled.div`
     font-size: 1.6rem;
     text-align: justify;
     font-weight: normal;
+
+    padding-bottom: 6.5rem;
   }
 `
 
