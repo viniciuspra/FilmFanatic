@@ -3,8 +3,8 @@ import { useAuth } from "../../hooks/auth";
 
 import { Container, Form, Background } from "./styles";
 import { FiMail, FiLock } from "react-icons/fi"
-import { Button } from "../../Components/Button"
-import { Input } from "../../Components/Input";
+import { Button } from "../../components/Button"
+import { Input } from "../../components/Input";
 import { Link } from "react-router-dom";
 
 export function SingIn() {
