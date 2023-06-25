@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { Container, Form, Section } from "./styles";
 
-import { Input } from "../../components/Input";
+import { Input } from "../../Components/Input";
 import { Button } from "../../components/Button";
 import { Header } from "../../Components/Header";
 import { TagItem } from "../../Components/TagItem";

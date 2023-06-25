@@ -1,4 +1,4 @@
-import { Container, Profile, Search} from "./styles";
+import { Container, Profile, Search } from "./styles";
 import { FiSearch } from "react-icons/fi"
 import { Input } from "../Input";
 import { Link } from "react-router-dom";
@@ -9,8 +9,8 @@ import { api } from "../../services/api";
 
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 
-export function Header() {
-  const { signOut, user } = useAuth() 
+export function Header({ search, setSearch }) {
+  const { signOut, user } = useAuth()
 
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
 
@@ -19,7 +19,13 @@ export function Header() {
       <h1>FilmFanatic</h1>
 
       <Search>
-        <Input placeholder="Pesquisar pelo título" type="text" icon={FiSearch} />
+        <Input
+          placeholder="Pesquisar pelo título"
+          type="text"
+          icon={FiSearch}
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+        />
       </Search>
 
       <Profile>
@@ -29,10 +35,10 @@ export function Header() {
 
         <Link to="/Profile">
           <img
-           src={avatarUrl}
-           alt={user.name} 
+            src={avatarUrl}
+            alt={user.name}
           />
-          </Link>
+        </Link>
       </Profile>
     </Container>
   )

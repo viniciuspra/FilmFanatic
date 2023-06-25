@@ -15,7 +15,7 @@ export default function Star(props) {
           "& > legend": { mt: 2 },
         }}
       >
-        <Rating name="read-only" value={value} readOnly />
+        <Rating name="read-only" value={value} readOnly size="large"/>
       </Box>
     </ThemeProvider>
   )
