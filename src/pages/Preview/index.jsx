@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 import { useAuth } from "../../hooks/auth"
 
@@ -22,6 +22,23 @@ export function Preview() {
   const [data, setData] = useState(null)
   const params = useParams()
 
+  const navigate = useNavigate()
+
+  function handleBack() {
+    navigate(-1)
+  }
+
+  async function handleRemove() {
+    const confirm = window.confirm('Deseja excluir essa nota?')
+
+    if (confirm) {
+      const response = await api.delete(`/notes/${params.id}`)
+      setData(response.data)
+      
+      navigate(-1)
+    }
+  }
+
   useEffect(() => {
     async function fetchNote() {
       const response = await api.get(`/notes/${params.id}`)
@@ -37,7 +54,7 @@ export function Preview() {
       {
         data &&
         <Content>
-          <BackButton />
+          <BackButton onClick={handleBack}/>
           <InfoBox>
             <div>
               <h1>
@@ -75,7 +92,10 @@ export function Preview() {
             {data.description}
           </p>
 
-          <Button title="Excluir filme" />
+          <Button
+            title="Excluir filme" 
+            onClick={handleRemove}
+          />
         </Content>
       }
     </Container>

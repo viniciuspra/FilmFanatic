@@ -25,6 +25,10 @@ export function New() {
 
   const navigate = useNavigate()
 
+  function handleBack() {
+    navigate(-1)
+  }
+
   function handleAddTag() {
     setTags(prevState => [...prevState, newTag])
     setNewTag('')
@@ -44,7 +48,7 @@ export function New() {
     }
 
     if (newTag) {
-      return alert('Lembre-se de adicionar o novo MARCADOR no +, se desejar, antes de salvar a nota.')
+      return alert('Você esqueceu de apertar o + para adicionar o marcador do filme!')
     }
 
     await api.post('/notes', {
@@ -55,7 +59,7 @@ export function New() {
     })
 
     alert('Filme adicionado com sucesso')
-    navigate('/')
+    navigate(-1)
   }
 
   return (
@@ -64,7 +68,7 @@ export function New() {
 
       <main>
         <header>
-          <BackButton />
+          <BackButton onClick={handleBack}/>
           <h1>Novo filme</h1>
         </header>
         <Form>

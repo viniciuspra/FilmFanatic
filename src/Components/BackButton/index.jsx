@@ -1,9 +1,9 @@
 import { Container } from "./styles";
 import { FiArrowLeft } from "react-icons/fi";
 
-export function BackButton() {
+export function BackButton({...rest}) {
   return (
-    <Container to="/">
+    <Container {...rest}>
       <FiArrowLeft /> Voltar
     </Container>
   )

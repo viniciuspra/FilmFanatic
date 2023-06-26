@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Container, Form, Avatar } from "./styles";
 import { FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi";
@@ -24,6 +25,12 @@ export function Profile() {
   const [avatar, setAvatar] = useState(avatarUrl)
   const [avatarFile, setAvatarFile] = useState(null)
 
+  const navigate = useNavigate()
+
+  function handleBack() {
+    navigate(-1)
+  }
+
   async function handleUpdate() {
     const updated = {
       name,
@@ -48,7 +55,7 @@ export function Profile() {
   return (
     <Container>
       <header>
-        <BackButton />
+        <BackButton onClick={handleBack}/>
       </header>
 
       <Form>
