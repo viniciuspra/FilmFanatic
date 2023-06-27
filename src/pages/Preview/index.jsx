@@ -15,6 +15,7 @@ import Star from "../../Components/Star"
 
 import { api } from "../../services/api"
 
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 
 export function Preview() {
   const { user } = useAuth()
@@ -66,7 +67,7 @@ export function Preview() {
 
             <span>
               <img
-                src={`${api.defaults.baseURL}/files/${user.avatar}`}
+                src={user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder}
                 alt={user.name}
               />
               Por {user.name}
