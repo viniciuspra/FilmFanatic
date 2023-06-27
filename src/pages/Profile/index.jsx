@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Container, Form, Avatar } from "./styles";
 import { FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi";
 import { BackButton } from "../../Components/BackButton";
-import { Button } from "../../components/Button";
+import { Button } from "../../Components/Button";
 import { Input } from "../../Components/Input";
 
 import { api } from "../../services/api";

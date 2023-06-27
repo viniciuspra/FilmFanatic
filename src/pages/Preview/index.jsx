@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Container, Content, InfoBox } from "./styles"
 import { BackButton } from "../../Components/BackButton"
 import { FiClock } from "react-icons/fi"
-import { Button } from "../../components/Button"
+import { Button } from "../../Components/Button"
 import { Header } from "../../Components/Header"
 import { Tag } from "../../Components/Tag"
 import Star from "../../Components/Star"
