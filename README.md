@@ -9,7 +9,10 @@
   
 </div>
 
-
+<div align="center">
+  <img width="700" alt="FilmFanatic-signIn" src="https://github.com/viniciuspra/FilmFanatic/assets/93842439/2832dde8-3c31-40bc-bd05-99f63edcae07"> <br>
+  <img width="700" alt="FilmFanatic-home" src="https://github.com/viniciuspra/FilmFanatic/assets/93842439/4d92c65d-5cc8-40fd-ba3a-54e27dd2ae5f">
+</div>
 
 ## Instalação 🛠️
 
