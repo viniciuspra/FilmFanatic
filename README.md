@@ -39,6 +39,10 @@ Para executar o projeto em sua própria máquina, siga os seguintes passos:
 - Os usuários podem adicionar tags para cada filme.
 - Os usuários podem filtrar os filmes por gênero.
 
+## Deploy 🚀
+O Front-End da aplicação FilmFanatic foi implantado no Netlify e está disponível no seguinte <br>
+URL: https://filmfanatic.netlify.app.
+
 ## Licença 📝
 
 Este projeto é licenciado sob a licença MIT. Consulte o arquivo LICENSE para obter mais informações.
