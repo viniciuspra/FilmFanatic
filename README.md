@@ -1,9 +1,9 @@
-# FilmFanatic 🎬
+<h1 align="center"> FilmFanatic 🎬</h1>
+
 <div align="center">
 
   <img src="https://img.shields.io/github/last-commit/viniciuspra/FilmFanatic" alt="GitHub last commit">
-  <img src="https://img.shields.io/github/languages/top/viniciuspra/FilmFanatic" alt="GitHub top language">
-
+  <img src="https://img.shields.io/github/languages/top/viniciuspra/FilmFanatic" alt="GitHub top language"> 
 
   FilmFanatic Front-end é um projeto que permite que os usuários criem notas para filmes, adicionem descrições, classifiquem com até 5 estrelas e adicionem tags para   cada filme.
   
@@ -25,10 +25,12 @@ Para executar o projeto em sua própria máquina, siga os seguintes passos:
 - JavaScript
 - React
 - Vite
+- axios
+- uuidv4
 - styled-components
 - react-icons
-- react-input-mask
 - react-router-dom
+- @mui/material
 
 ## Funcionalidades 💡
 
